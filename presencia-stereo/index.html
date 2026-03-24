@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Presencia Stereo - La mejor música y noticias 24/7. Escucha en vivo.">
+    <title>Presencia Stereo - Radio en Vivo</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Elements for Glassmorphism Context -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="assets/presencia_logo.png" alt="Presencia Stereo Logo" id="header-logo" class="logo-img">
+                <span class="logo-text">Presencia<span class="accent">Stereo</span></span>
+            </div>
+            <nav class="nav">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#noticias" class="nav-link">Noticias</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+            <button class="menu-btn" aria-label="Menu" id="mobile-menu-btn">
+                <i class="ri-menu-3-line"></i>
+            </button>
+        </header>
+
+        <!-- Main Content (Scrollable) -->
+        <main class="main-content">
+            
+            <!-- Hero / Radio en Vivo -->
+            <section id="inicio" class="hero-section">
+                <div class="hero-bg-image">
+                    <img src="assets/radio_studio_bg.png" alt="Studio Background">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="live-badge">
+                        <span class="pulse-dot"></span> EN VIVO AHORA
+                    </div>
+                    <h1 class="hero-title">El Sonido de <br><span class="gradient-text">Tu Generación</span></h1>
+                    <p class="hero-subtitle">Conéctate a la mejor programación musical y contenido exclusivo en Presencia Stereo. 24/7 para ti.</p>
+                    
+                    <div class="current-show glass-panel">
+                        <div class="show-info">
+                            <span class="show-label">Al Aire:</span>
+                            <h3 class="show-name">Morning Vibes con DJ Alex</h3>
+                            <p class="show-time">08:00 AM - 12:00 PM</p>
+                        </div>
+                        <div class="visualizer hidden" id="hero-visualizer">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Noticias Section -->
+            <section id="noticias" class="news-section">
+                <div class="section-header">
+                    <h2 class="section-title">Últimas <span class="accent">Noticias</span></h2>
+                    <a href="#" class="view-all">Ver todas <i class="ri-arrow-right-line"></i></a>
+                </div>
+                <div class="news-grid">
+                    <!-- News Card 1 -->
+                    <article class="news-card glass-panel group">
+                        <div class="news-image placeholder-img"></div>
+                        <div class="news-content">
+                            <span class="news-category">Música</span>
+                            <h3 class="news-title">Los lanzamientos más esperados de este mes</h3>
+                            <p class="news-excerpt">Descubre qué artistas encabezan las listas y cuáles son las novedades...</p>
+                            <span class="news-date">23 Mar, 2026</span>
+                        </div>
+                    </article>
+                    <!-- News Card 2 -->
+                    <article class="news-card glass-panel group">
+                        <div class="news-image placeholder-img dark"></div>
+                        <div class="news-content">
+                            <span class="news-category">Eventos</span>
+                            <h3 class="news-title">Festival Presencia 2026: Todo lo que debes saber</h3>
+                            <p class="news-excerpt">Prepárate para el evento del año. Conoce el lineup oficial y cómo conseguir tus entradas...</p>
+                            <span class="news-date">21 Mar, 2026</span>
+                        </div>
+                    </article>
+                    <!-- News Card 3 -->
+                    <article class="news-card glass-panel group">
+                        <div class="news-image placeholder-img dark"></div>
+                        <div class="news-content">
+                            <span class="news-category">Entrevistas</span>
+                            <h3 class="news-title">Exclusiva: En el estudio de grabación</h3>
+                            <p class="news-excerpt">Conversamos sobre su nuevo álbum y los retos de la gira internacional...</p>
+                            <span class="news-date">19 Mar, 2026</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contacto Section -->
+            <section id="contacto" class="contact-section">
+                <div class="contact-container glass-panel">
+                    <div class="contact-info">
+                        <h2 class="section-title">Mantente en <span class="accent">Contacto</span></h2>
+                        <p>¿Tienes dudas, sugerencias o simplemente quieres saludar? Escríbenos, estamos al aire y pendientes de ti.</p>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-btn"><i class="ri-whatsapp-line"></i></a>
+                            <a href="#" class="social-btn"><i class="ri-instagram-line"></i></a>
+                            <a href="#" class="social-btn"><i class="ri-facebook-fill"></i></a>
+                            <a href="#" class="social-btn"><i class="ri-twitter-x-line"></i></a>
+                        </div>
+                        
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <i class="ri-phone-fill"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="ri-mail-fill"></i>
+                                <span>hola@presenciastereo.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Tu Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Tu Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Mensaje <i class="ri-send-plane-fill"></i></button>
+                    </form>
+                </div>
+            </section>
+            
+            <!-- Padding for bottom player -->
+            <div class="player-padding"></div>
+        </main>
+
+        <!-- Bottom App-Style Player -->
+        <div class="bottom-player glass-panel">
+            <div class="player-internal">
+                <!-- Audio Element -->
+                <audio id="radio-audio" crossorigin="anonymous">
+                    <!-- Placeholder free internet radio stream, user can replace -->
+                    <source src="https://stream.live.vc.bbcmedia.co.uk/bbc_world_service" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+
+                <div class="player-track-info">
+                    <div class="track-artwork rotating" id="player-artwork">
+                        <img src="assets/presencia_logo.png" alt="Track Art">
+                    </div>
+                    <div class="track-details">
+                        <h4 class="track-title" id="marquee-title">Presencia Stereo - En Vivo</h4>
+                        <p class="track-artist">Programación Principal</p>
+                    </div>
+                </div>
+
+                <div class="player-controls">
+                    <button class="control-btn secondary"><i class="ri-skip-back-fill"></i></button>
+                    <button class="control-btn primary" id="play-pause-btn">
+                        <i class="ri-play-fill" id="play-icon"></i>
+                    </button>
+                    <button class="control-btn secondary"><i class="ri-skip-forward-fill"></i></button>
+                </div>
+
+                <div class="player-volume">
+                    <i class="ri-volume-up-fill" id="mute-icon"></i>
+                    <div class="volume-slider-container">
+                        <input type="range" id="volume-slider" min="0" max="100" value="100" class="volume-slider">
+                        <div class="volume-progress" id="volume-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav">
+        <div class="glass-panel mobile-nav-content">
+            <button class="close-menu-btn" id="close-menu-btn"><i class="ri-close-line"></i></button>
+            <nav class="mobile-links">
+                <a href="#inicio" class="mobile-link">Inicio</a>
+                <a href="#noticias" class="mobile-link">Noticias</a>
+                <a href="#contacto" class="mobile-link">Contacto</a>
+            </nav>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
