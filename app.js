@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastVolume = 1; // 100%
 
     // --- REPRODUCTOR LOGIC ---
-    function togglePlay() {
+    function togglePlay(isAutoPlay = false) {
         if (isPlaying) {
             // Pause
             radioAudio.pause();
@@ -55,7 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .catch(error => {
                     console.log("Error de autoplay:", error);
-                    alert("Asegúrate de interactuar con la página primero para reproducir el audio.");
+                    if (!isAutoPlay) {
+                        alert("Asegúrate de interactuar con la página primero para reproducir el audio.");
+                    }
                     isPlaying = false; // rollback state
                 });
             }
@@ -63,8 +65,25 @@ document.addEventListener('DOMContentLoaded', () => {
         isPlaying = !isPlaying;
     }
 
-    audioBtn.addEventListener('click', togglePlay);
+    audioBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evitar que dispare el clic del body
+        togglePlay(false);
+    });
 
+    // --- AUTOPLAY LOGIC ---
+    // Intentar reproducir al cargar la página
+    setTimeout(() => {
+        if (!isPlaying) {
+            togglePlay(true);
+        }
+    }, 1000);
+
+    // Si el navegador bloqueó el autoplay, iniciar al primer clic en la página
+    document.body.addEventListener('click', () => {
+        if (!isPlaying) {
+            togglePlay(true);
+        }
+    }, { once: true });
     // --- VOLUME LOGIC ---
     function updateVolumeProgress() {
         const val = volumeSlider.value;
