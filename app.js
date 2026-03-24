@@ -35,12 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Play
             // Para asegurar la carga desde el inicio en un stream continuo
-            const currentSrc = radioAudio.src;
             if (radioAudio.paused) {
-                // Pequeño truco para forzar actualización del stream
-                radioAudio.src = '';
-                radioAudio.src = currentSrc;
-                radioAudio.load();
+                // Recuperar la fuente y recargarla para limpiar el buffer
+                const sourceEl = radioAudio.querySelector('source');
+                const streamUrl = radioAudio.currentSrc || radioAudio.src || (sourceEl ? sourceEl.src : '');
+                if (streamUrl) {
+                    radioAudio.src = streamUrl;
+                    radioAudio.load();
+                }
             }
             
             const playPromise = radioAudio.play();
